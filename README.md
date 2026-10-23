@@ -17,22 +17,12 @@ Hold **F12** for **5 seconds** to unlock everything.
 4. Hold **F12** for 5 seconds. A blue bar fills under the status text.
 5. If you forget, the watchdog unlocks everything on its own (default 120s).
 
-## If it fails to start
 
-The error `Missing ")"` with a full-width `）` in it means the file picked up a
-smart character somewhere, usually from copy-paste. Do not retype the script.
-Download the file, open it in Notepad, and check that line 234 looks like:
 
-```ahk
-SetTimer(DoWatchdog, -sec * 1000)
-```
-
-If it contains any full-width bracket, quote, or asterisk, the file is corrupted.
-Replace it with the downloaded version.
 
 ## Why v1 did not work
 
-| Symptom in v1 ↕▾ | Cause ↕▾ | Fix in v2.1 ↕▾ |
+| Symptom in v1 ↕▾ | Cause ↕▾ | Fix in v2 ↕▾ |
 |---|---|---|
 | −`^!m` did not unlock the mouse | The M key is inside the `*vkXX` block list. If the keyboard was also locked, `^!m` could never fire | Removed. One universal escape: hold F12 |
 | Triple right-click unlock did nothing | Right-click was blocked by the same list, so `~RButton` never got clean presses | Removed |
